@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Etiquetas</title>
+    </head>
+
+    <body>
+        <!-- Encabezados -->
+        <h1>Header 1 -> Encabezado 1</h1>
+        <h2>Header 2 -> Encabezado 2</h2>
+        <h3>Header 3 -> Encabezado 3</h3>
+        <h4>Header 4 -> Encabezado 4</h4>
+        <h5>Header 5 -> Encabezado 5</h5>
+        <h6>Header 6 -> Encabezado 6</h6>
+
+        <!-- Párrafos -->
+        <p id="parrafo">Párrafo ....... pensado para textos largos</p>
+
+        <!-- Peso a las palabras -->
+        <!-- Las etiquetas semánticas ayudan al motor de búsqueda. Es para cosas específicas y relevantes de nuestra web. (Posicionamiento SEO) -->
+        <strong>Negrita con "strong"</strong> <!-- etiqueta semántica -->
+        <br><!-- salto de línea -->
+        <b>Negrita con "b"</b>
+        <br>
+        <i>Itálica con "i"</i>
+        <br>
+        <em>Itálica con "em"</em> <!-- etiqueta semántica -->
+        <br>
+        <u>Subrrallado</u>
+        <br>
+        <mark>Resaltado</mark>
+        <br>
+        <cite>"Hola mundo"</cite> <!-- cita en itálicas -->
+
+        <!-- Listados -->
+
+        <ol> <!-- lista ordenada -->
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <ol type=I> <!-- podemos cambiar la numeración con el atributo type -->
+                <li>Subelemento 1</li>
+                <li>Subelemento 2</li>
+                <li>Subelemento 3</li>
+            </ol>
+            <li>Elemento 3</li>
+            <ol type=A start=4> <!-- podemos hacer que arranque en cualquier punto -->
+                <li>Subelemento 4</li>
+                <li>Subelemento 5</li>
+            </ol>
+        </ol> 
+
+        <ul> <!-- lista desordenada -->
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+         
+        <!-- Media: imagenes, audio, video -->
+        
+        <!-- Podemos usar rutas absolutas o relativas -->
+        <!-- Podemos ajustar con atributos -->
+        <img src="imagenes/monza.jpg" width="500"> <!-- ruta relativa -->
+        <img src="https://cdn-9.motorsport.com/images/amp/YKEZbVX0/s1000/ferrari-499p-1.webp" width="500"> <!-- ruta absoluta | desaconsejado por si cambia o cae la imagen, siempre usar recursos propios, sean locales o en internet -->
+        <br>
+        <!-- Links -->
+        <a href="https://www.google.com">Google</a> <!-- se usa href en vez de src -->
+        <br>
+        <a href="./etiquetas.html#parrafo">Me lleva al párrafo</a> <!-- me dirije a donde está el id "lista" -->
+
+        <!-- Etiquetas estructurales -->
+        <main></main>
+        <section></section>
+        <nav></nav>
+        <header></header>
+        <div></div>
+        <article></article>
+        <aside></aside>
+        <footer></footer>
+        <menu></menu>
+        <!-- generan cajas para contenido -->
+
+        <!-- Otras -->
+         <span></span> <!-- sirve para cuando querés modificar un pedazo de un texto, por ejemplo, y no a todo el párrafo -->
+         <code>console.log("Hola mundo")</code> <!-- sirve para darle una estética como de consola -->
+    </body>
+
+
+</html>
