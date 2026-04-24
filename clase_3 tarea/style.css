@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    
+    height: 100vh;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#logo a {
+    display: inline-flex;
+    flex-direction: column; /* uno arriba del otro */
+    align-items: center;    /* centrados */
+    text-decoration: none;
+}
+
+#logo p {
+    margin: 0;
+}
+
+
+#logo img {
+    height: 80px;
+    width: auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    min-height: 0; /*chatgpt*/
+    height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    text-align: center;
+}
+.uno {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* header | main | footer */
+    min-height: 0;
+}
+
+.dos {
+    min-height: 0;       /* evita que crezca de más */
+    overflow: hidden;    /* corta lo que se desborde */
+}
+
+.dos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* elimina espacio raro abajo */
+}
+
+footer{
+    text-align: center;
+}
