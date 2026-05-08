@@ -4,15 +4,15 @@ class Serie{
     _url;
     _name;
     _language;
-    _generes;
+    _genres;
     _image;
 
-    constructor(id, url, name, language, generes, image){
+    constructor(id, url, name, language, genres, image){
         this._id = id;
         this._url = url;
         this._name = name;
         this._language = language;
-        this._generes = generes;
+        this._genres = genres;
         this._image = image;
     }
     
@@ -44,11 +44,11 @@ class Serie{
         this._language = language;
     }
 
-    get generes(){
-        return this._generes;
+    get genres(){
+        return this._genres;
     }
-    set generes(generes){
-        this._generes = generes;
+    set genres(genres){
+        this._genres = genres;
     }
 
     get image(){
@@ -65,7 +65,7 @@ class Serie{
             url: this._url,
             name: this._name,
             language: this._language,
-            generes: this._generes,
+            genres: this._genres,
             image: this._image
         };
         //creo el JSON a partir del objeto y lo retorno
@@ -77,7 +77,7 @@ class Serie{
         const obj = JSON.parse(json);
 
         //creo la nueva serie con los datos del JSON y la retorno
-        return new Serie(obj.id, obj.url, obj.name, obj.language, obj.generes, obj.image);
+        return new Serie(obj.id, obj.url, obj.name, obj.language, obj.genres, obj.image);
     }
 
     createHtmlElement(){
@@ -91,7 +91,7 @@ class Serie{
         const imgImagen = document.createElement("img");
 
         let cadena = "";
-        for (let g of this._generes){
+        for (let g of this._genres){
             cadena += g + " ";
         }
         //asigno los elementos
