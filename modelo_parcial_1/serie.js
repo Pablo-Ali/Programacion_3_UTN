@@ -89,19 +89,52 @@ class Serie{
         const pLanguage = document.createElement("p");
         const pGenres = document.createElement("p");
         const imgImagen = document.createElement("img");
+        const aMarcoImagen = document.createElement("a"); //creo una etiqueta <a></a> para poder hacer click sobre la img
+        const botonGuardar = document.createElement("button"); //creo el botón para guardar series
 
         let cadena = "";
+        let contador = 1; //esto es para que no se imprima el último guión. Debe haber algo más fácil, pero es lo que se me ocurrió
         for (let g of this._genres){
-            cadena += g + " ";
+            if (contador < this._genres.length){
+                cadena += g + " - ";
+            }else{
+                cadena += g;
+            }
+            contador++;
         }
         //asigno los elementos
         h2Nombre.textContent = this._name;
         pLanguage.textContent = this._language;
         pGenres.textContent = cadena;
         imgImagen.src = this._image;
+        aMarcoImagen.href = this._url;
+        aMarcoImagen.target = "_blank"; //se abre en una pestaña nueva
+        aMarcoImagen.append(imgImagen);//vinculo la imagen al marco
+        botonGuardar.textContent="Guardar";
+        botonGuardar.onclick = () => {
+            this.guardarSerie();
+        }
 
         //asigno los elementos al contenedor y retorno
-        div.append(h2Nombre, pLanguage,pGenres,imgImagen);
+        div.append(h2Nombre, pLanguage, pGenres, aMarcoImagen, botonGuardar);
+
         return div;
+    }
+
+    guardarSerie(){
+        //traigo lo que está guardado en el local storage con la clave series
+        let arrayLocalSorage = localStorage.getItem("series");
+
+        //convierto el array JSON en array de JS. Si no existe, lo creo
+        let arrayJS = JSON.parse(arrayLocalSorage);
+        if (!arrayJS){
+            arrayJS = [];
+        }
+
+        //agrego la nueva serie como un array de JS (primero paso la instancia a String y luego a array)
+        arrayJS.push(JSON.parse(this.toJsonString()));
+
+        //guardo todas las series en el local storage
+        localStorage.setItem("series", JSON.stringify(arrayJS));
     }
 }
