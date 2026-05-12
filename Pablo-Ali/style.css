@@ -1,0 +1,54 @@
+/*2A*/
+.m-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+header{
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+#panel-izquierda{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#principal{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/*2B*/
+@media (max-width: 799px){
+    h1{
+        color: #FF3311;
+    }
+}
+
+/*2C*/
+#principal{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*index*/
+#puestos{
+    max-width: 200px;
+} 
+#traer-puesto{
+    max-width: 200px;
+}
+#busqueda{
+    max-width: 200px;
+}
+/*guardados*/
+#puestos-guardados{
+    max-width: 200px;
+}
+#promedio{
+    max-width: 200px;
+}
+#habilidad-mas-requerida{
+    max-width: 200px;
+}
